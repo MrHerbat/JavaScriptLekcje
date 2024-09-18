@@ -119,12 +119,12 @@
     //pobierz nazwisko od użytkownika, zadaj pytanie "czy jesteś uczniem?
     // jeśli tak to poproś o wpisanie nazwy szkoły
     // jeśli nie, to wypisz komunikat "strona nie jest przeznaczona dla ciebie"
-
+    let nazwisko = prompt("podaj nazwisko")
     let uczen = confirm("czy jesteś uczniem?");
     if(uczen)
     {
         let szkola = prompt("podaj nazwę szkoły");
-        document.write(szkola);
+        document.write(nazwisko+" jest uczniem "+szkola);
     }else{
         alert("Strona nie jest przeznaczona dla ciebie");
     }
