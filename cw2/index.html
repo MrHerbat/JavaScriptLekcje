@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //zadanie 1
+    // od użytkownika pobierz kwote, którą deponuje w banku, okres oszczędzania podany w latach oraz również pobieramy od użytkownika
+    // oprocentwoanie jest stałe i wynosi 4% skali rocznej z kapitalizacją pół roczną
+    // wykonaj zestawienia stanu oszczędności obejmujący cele w całym okresie oszczędzania
+
+    let kwota = prompt("Kwotę do zdeponowania na konto oszczędnościowe");
+    let lata = prompt("Podaj ile lat chcesz oszczędzać zdeponowaną kwotę");
+    kwota = parseInt(kwota);
+    lata = parseInt(lata)
+    let x = lata*2;
+    document.write("masz na koncie "+kwota+"zł<br>");
+    for (let i = 0; i < x; i++) {
+        kwota += kwota * 0.02;
+        kwota = Math.round(kwota*100)/100
+        document.write("po "+(i+1)+" półroczu masz na koncie "+kwota+"zł<br>");
+    }
+
+
+    //zadanie 2
+
+</script>
+</body>
+</html>
