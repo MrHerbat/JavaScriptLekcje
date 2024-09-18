@@ -37,9 +37,25 @@
 
         return pow;
     }
+    function NWD(x,y)
+    {
+        while(a!=b)
+        {
+            if(a>b)
+            {
+                a-=b;
+            }
+            else
+            {
+                b-=a;
+            }
+        }
+        return a;
+
+    }
 
 
-    let wybor = (prompt("dodawnie (+) | odejmowanie (-) | mnożenie (*) | dzielenie (/) | potęga (^) "));
+    let wybor = (prompt("dodawnie (+) | odejmowanie (-) | mnożenie (*) | dzielenie (/) | potęga (^) | NWD (nwd)"));
     let a = prompt("Podaj liczbę a");
     let b = prompt("Podaj liczbę b");
     a = parseFloat(a);
@@ -64,6 +80,9 @@
             break;
         case "^":
             document.write(a+"^"+b+" = "+Power(a,b));
+            break;
+        case "nwd":
+            document.write("NWD liczb: "+a+" i "+b+" wynosi "+NWD(a,b));
             break;
         default:
             document.write("Nie ma takiego wyboru na liście");
