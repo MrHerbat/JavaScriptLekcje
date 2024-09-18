@@ -11,21 +11,51 @@
     // oprocentwoanie jest stałe i wynosi 4% skali rocznej z kapitalizacją pół roczną
     // wykonaj zestawienia stanu oszczędności obejmujący cele w całym okresie oszczędzania
 
-    let kwota = prompt("Kwotę do zdeponowania na konto oszczędnościowe");
-    let lata = prompt("Podaj ile lat chcesz oszczędzać zdeponowaną kwotę");
-    kwota = parseInt(kwota);
-    lata = parseInt(lata)
-    let x = lata*2;
-    document.write("masz na koncie "+kwota+"zł<br>");
-    for (let i = 0; i < x; i++) {
-        kwota += kwota * 0.02;
-        kwota = Math.round(kwota*100)/100
-        document.write("po "+(i+1)+" półroczu masz na koncie "+kwota+"zł<br>");
-    }
+    // let kwota = prompt("Kwotę do zdeponowania na konto oszczędnościowe");
+    // let lata = prompt("Podaj ile lat chcesz oszczędzać zdeponowaną kwotę");
+    // kwota = parseInt(kwota);
+    // lata = parseInt(lata)
+    // let x = lata*2;
+    // document.write("masz na koncie "+kwota+"zł<br>");
+    // for (let i = 0; i < x; i++) {
+    //     kwota += kwota * 0.02;
+    //     kwota = Math.round(kwota*100)/100
+    //     document.write("po "+(i+1)+" półroczu masz na koncie "+kwota+"zł<br>");
+    // }
 
 
     //zadanie 2
+    // napisz skrypt, który w zależności od wyboru działania będzie wykonywał i pokazywał działanie na dwóch liczbach rzeczywistych pobranych
+    // od użytkownika
 
+
+    let a = prompt("Podaj liczbę a");
+    let wybor = (prompt("dodawnie (+) | odejmowanie (-) | mnożenie (*) | dzielenie (/) "));
+    let b = prompt("Podaj liczbę b");
+    a = parseFloat(a);
+    b = parseFloat(b);
+
+    switch (wybor) {
+        case "+":
+            document.write(a+" + "+b+" = "+parseFloat(a+b));
+            break;
+        case "-":
+            document.write(a+" - "+b+" = "+parseFloat(a-b));
+            break;
+        case "*":
+            document.write(a+" * "+b+" = "+parseFloat(a*b));
+            break;
+        case "/":
+            if(b!=0) {
+                document.write(a+" / "+b+" = "+parseFloat(a/b));
+            }else{
+                document.write("nie dzielimy przez 0!")
+            }
+            break;
+        default:
+            document.write("Nie ma takiego wyboru na liście");
+            break;
+    }
 </script>
 </body>
 </html>
