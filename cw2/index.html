@@ -28,66 +28,107 @@
     // napisz skrypt, który w zależności od wyboru działania będzie wykonywał i pokazywał działanie na dwóch liczbach rzeczywistych pobranych
     // od użytkownika
 
-    function Power(x, n)
+    // function Power(x, n)
+    // {
+    //     let pow = 1;
+    //         for (let i = 0; i < n; i++) {
+    //             pow*=x;
+    //         }
+    //
+    //     return pow;
+    // }
+    // function NWD(x,y)
+    // {
+    //     while(a!=b)
+    //     {
+    //         if(a>b)
+    //         {
+    //             a-=b;
+    //         }
+    //         else
+    //         {
+    //             b-=a;
+    //         }
+    //     }
+    //     return a;
+    //
+    // }
+    //
+    //
+    // let wybor = (prompt("dodawnie (+) | odejmowanie (-) | mnożenie (*) | dzielenie (/) | potęga (^) | NWD (nwd)"));
+    // let a = prompt("Podaj liczbę a");
+    // let b = prompt("Podaj liczbę b");
+    // a = parseFloat(a);
+    // b = parseFloat(b);
+    //
+    // switch (wybor) {
+    //     case "+":
+    //         document.write(a+" + "+b+" = "+parseFloat(a+b));
+    //         break;
+    //     case "-":
+    //         document.write(a+" - "+b+" = "+parseFloat(a-b));
+    //         break;
+    //     case "*":
+    //         document.write(a+" * "+b+" = "+parseFloat(a*b));
+    //         break;
+    //     case "/":
+    //         if(b!=0) {
+    //             document.write(a+" / "+b+" = "+parseFloat(a/b));
+    //         }else{
+    //             document.write("nie dzielimy przez 0!")
+    //         }
+    //         break;
+    //     case "^":
+    //         document.write(a+"^"+b+" = "+Power(a,b));
+    //         break;
+    //     case "nwd":
+    //         document.write("NWD liczb: "+a+" i "+b+" wynosi "+NWD(a,b));
+    //         break;
+    //     default:
+    //         document.write("Nie ma takiego wyboru na liście");
+    //         break;
+    // }
+
+
+    //zadanie 3
+    // pobierz od użytkownika 1 liczbę naturalną i wypisz wszystkie liczby od 1 do pobranej wartości (włącznie z tą wartością)
+    //pogrub te z nich, które są parzyste i oblicz ich sume
+    // let wartosc = prompt("Podaj liczbe naturalna");
+    // wartosc = parseInt(wartosc);
+    // let parzyste =0;
+    // if(wartosc<0)
+    // {
+    //     document.write("naturalne to większe od 0!")
+    // }else{
+    //     for(let i = 1; i<=wartosc;i++)
+    //     {
+    //         if(i%2==0)
+    //         {
+    //             parzyste+=i;
+    //             document.write("<b>"+i+"</b> ")
+    //         }else
+    //         {
+    //             document.write(i+" ");
+    //         }
+    //     }
+    //     document.write("suma wszystkich liczb parzystych z tego zakresu wynosi "+parzyste);
+    // }
+
+
+    //zadanie 4
+    //pobierz nazwisko od użytkownika, zadaj pytanie "czy jesteś uczniem?
+    // jeśli tak to poproś o wpisanie nazwy szkoły
+    // jeśli nie, to wypisz komunikat "strona nie jest przeznaczona dla ciebie"
+
+    let uczen = confirm("czy jesteś uczniem?");
+    if(uczen)
     {
-        let pow = 1;
-            for (let i = 0; i < n; i++) {
-                pow*=x;
-            }
-
-        return pow;
-    }
-    function NWD(x,y)
-    {
-        while(a!=b)
-        {
-            if(a>b)
-            {
-                a-=b;
-            }
-            else
-            {
-                b-=a;
-            }
-        }
-        return a;
-
+        let szkola = prompt("podaj nazwę szkoły");
+        document.write(szkola);
+    }else{
+        alert("Strona nie jest przeznaczona dla ciebie");
     }
 
-
-    let wybor = (prompt("dodawnie (+) | odejmowanie (-) | mnożenie (*) | dzielenie (/) | potęga (^) | NWD (nwd)"));
-    let a = prompt("Podaj liczbę a");
-    let b = prompt("Podaj liczbę b");
-    a = parseFloat(a);
-    b = parseFloat(b);
-
-    switch (wybor) {
-        case "+":
-            document.write(a+" + "+b+" = "+parseFloat(a+b));
-            break;
-        case "-":
-            document.write(a+" - "+b+" = "+parseFloat(a-b));
-            break;
-        case "*":
-            document.write(a+" * "+b+" = "+parseFloat(a*b));
-            break;
-        case "/":
-            if(b!=0) {
-                document.write(a+" / "+b+" = "+parseFloat(a/b));
-            }else{
-                document.write("nie dzielimy przez 0!")
-            }
-            break;
-        case "^":
-            document.write(a+"^"+b+" = "+Power(a,b));
-            break;
-        case "nwd":
-            document.write("NWD liczb: "+a+" i "+b+" wynosi "+NWD(a,b));
-            break;
-        default:
-            document.write("Nie ma takiego wyboru na liście");
-            break;
-    }
 </script>
 </body>
 </html>
