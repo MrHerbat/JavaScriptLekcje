@@ -28,9 +28,19 @@
     // napisz skrypt, który w zależności od wyboru działania będzie wykonywał i pokazywał działanie na dwóch liczbach rzeczywistych pobranych
     // od użytkownika
 
+    function Power(x, n)
+    {
+        let pow = 1;
+            for (let i = 0; i < n; i++) {
+                pow*=x;
+            }
 
+        return pow;
+    }
+
+
+    let wybor = (prompt("dodawnie (+) | odejmowanie (-) | mnożenie (*) | dzielenie (/) | potęga (^) "));
     let a = prompt("Podaj liczbę a");
-    let wybor = (prompt("dodawnie (+) | odejmowanie (-) | mnożenie (*) | dzielenie (/) "));
     let b = prompt("Podaj liczbę b");
     a = parseFloat(a);
     b = parseFloat(b);
@@ -51,6 +61,9 @@
             }else{
                 document.write("nie dzielimy przez 0!")
             }
+            break;
+        case "^":
+            document.write(a+"^"+b+" = "+Power(a,b));
             break;
         default:
             document.write("Nie ma takiego wyboru na liście");
