@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tablice</h1>
+    <script>
+        var tab = new Array(20);
+        document.write("<h2>Wypełnianie tablicy</h2>");
+        for (var i = 0; i < tab.length; i++) {
+            tab[i] = Math.floor(Math.random() * 99)+1;
+            document.write(tab[i] + ",");
+        }
+        document.write("<br><h2>Odwrócenie tablicy</h2>");
+        tab.reverse();
+        document.write(tab);
+        document.write("<br><h2>Sortowanie rosnące tablicy</h2>");
+        tab.sort(function(a, b){return a-b});
+        document.write(tab);
+    </script>
+</body>
+</html>
