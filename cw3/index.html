@@ -9,6 +9,7 @@
     <script>
         var tab = new Array(20);
         document.write("<h2>Wypełnianie tablicy</h2>");
+        document.write("długość tablicy: "+tab.length+"<br>");
         for (var i = 0; i < tab.length; i++) {
             tab[i] = Math.floor(Math.random() * 99)+1;
             document.write(tab[i] + ",");
@@ -19,6 +20,38 @@
         document.write("<br><h2>Sortowanie rosnące tablicy</h2>");
         tab.sort(function(a, b){return a-b});
         document.write(tab);
+        document.write("<br><h2>Sprawdzanie jednej wartości w tablicy</h2>");
+
+        var valueToCheck = parseInt(prompt("Podaj wartość do sprawdzenia"));
+        var onIndex = tab.indexOf(valueToCheck);
+        if(onIndex != -1) {
+            document.write("<br>Wartość " + valueToCheck + " znajduje się w tablicy na indexie "+ onIndex);
+        } else {
+            document.write("<br>Wartość " + valueToCheck + " nie znajduje się w tablicy");
+        }
+        document.write("<br><h2>Ucinanie indexów w tablicy</h2>");
+        var tab2 = tab.slice(4,11);
+        var tab3 = tab.slice();
+        tab3.splice(4,6);
+        document.write(tab+"<br>");
+        document.write(tab2+"<br>");
+        document.write(tab3);
+
+        document.write("<br><h2>Dodawanie wartości na koniec tablicy</h2>");
+        tab3.push(333,444,555);
+        document.write(tab3+"<br>");
+        document.write("długość tablicy: "+tab3.length);
+
+        document.write("<br><h2>tablica do stringa</h2>");
+        var tabString = tab.join("");
+        for (let i = 0; i < tabString.length; i++) {
+            if(tabString[i] == 2) {
+                document.write("<sup>"+tabString[i]+"</sup>");
+            }else{
+                document.write(tabString[i]);
+            }
+        }
+
     </script>
 </body>
 </html>
