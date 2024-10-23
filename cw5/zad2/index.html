@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // zadanie 2
+    //  Wprowadz dowolny łancuch znaków i wyświetl go tak, by pierwszy i ostatni miały największy rozmiar czcionki, a każdy inny - najmniejszy
+    var text = prompt("Podaj tekst");
+    for (let i = 0; i < text.length; i++) {
+        if (i == 0 || i == text.length - 1) {
+            document.write(text[i].fontsize(7));
+        } else {
+            document.write(text[i].fontsize(1));
+        }
+    }
+</script>
+
+</body>
+</html>
