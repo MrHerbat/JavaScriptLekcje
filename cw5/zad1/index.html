@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //zadanie 1
+    // tablice asocjacyjną o rozmiarze 6, gdzie kluczami są nazwiska, a wartościami średnia ocen ([nazwisko] => średnia ocen)
+    // wypełij danymi pobranymi od użytkownika, wyświetl tablicę w postaci [nazwisko] - średnia ocen: [średnia ocen]
+    // znajdź największą średnią ocen i wyświetl ją w postaci [nazwisko] ma największą średnią ocen: [średnia ocen]
+    let tab = Array(4);
+    for (let i = 0; i < tab.length; i++) {
+        let lastname = prompt("Podaj nazwisko");
+        let avg = parseFloat(prompt("Podaj średnią ocen"));
+        tab[lastname] = avg;
+    }
+    var maxAvg = 0;
+    var maxAvgName = "";
+    for(i in tab){
+        if(tab[i] > maxAvg){
+            maxAvg = tab[i];
+            maxAvgName = i;
+        }
+        document.write(i + " - średnia ocen: " + tab[i] + "<br>");
+    }
+    document.write(maxAvgName + " ma największą średnią ocen: " + maxAvg + "<br>");
+
+
+</script>
+</body>
+</html>
