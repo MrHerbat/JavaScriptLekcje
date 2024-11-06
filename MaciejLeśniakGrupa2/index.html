@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 1</title>
+</head>
+<body>
+    <script>
+        /*
+        * zad 1
+        * 3 liczby pobrać od użytkownika.
+        * wyznacz ich iloczyn
+        * wyznacz pierwiastek tego iloczynu
+        * zaokrągl pierwiastek w dół
+        * DONE
+        *
+        * zad 2
+        * liczbe z zadania 1 traktujemy jako rozmiar tablicy
+        * wypełniamy tablicę liczbami całkowitymi od 10 do 110
+        * wyświetlamy zawartość tablicy
+        * posortuj malejąco te liczby
+        * na początek dodaj liczby (7 i 8)
+        * sprawdź na której pozycji jest liczba losowa z przedziału (50-80)
+        * przekonwertuj tablicę na stringa
+        * separator = ','
+        * DONE
+        *
+        * zad 3
+        * otrzymany string wypisz foramtując go w następujący sposób:
+        * wszystkie , zamień na 'x', kolor zielony
+        * co 3 znak począwszy od pierwszego, jako indeks dolny koloru czerwonego
+        * środkowy znak (lub 2 środkowe), możliwie największą czcionką
+        * DONE
+        *
+        * zad 4
+        * tablice asocjacyjną gdzie kluczem jest nazwa przedmiot => ilość
+        * wypełnij obydwie grupy 6 rekordami
+        * wypisz w czytelnej postaci
+        * wylosuj 6 liczb całkowitych z przedziału 10-1000 i potraktuj je jako ceny jednostkowe poszczególnych pzredmiotów
+        * wypisz otrzymane wartości w postaci:
+        * nazwa przedmiotu: ilość, cena/szt. = cena
+        *
+        * */
+
+        document.write("<h3>ZADANIE 1 - MATH </h3><br>");
+
+        var a = parseInt(prompt("Podaj liczbe a"));
+        var b = parseInt(prompt("Podaj liczbe b"));
+        var c = parseInt(prompt("Podaj liczbe c"));
+        var iloczyn = a*b*c;
+        document.write("liczby podane przez użytkownika: <br>");
+        document.write("a = "+a+"<br> b = "+b+"<br> c = "+c+"<br>");
+        document.write("iloczyn liczb a, b, c = "+iloczyn+"<br>");
+        var pierwiastek = Math.sqrt(iloczyn);
+        document.write("pierwiastek z iloczynu = "+pierwiastek+"<br>");
+        pierwiastek = Math.floor(pierwiastek);
+        document.write("pierwiastek zaokrąglony w dół = "+pierwiastek+"<br>");
+
+        document.write("<h3>ZADANIE 2 - ARRAY</h3><br>");
+
+        var tab = new Array(pierwiastek);
+        for(var i = 0; i < tab.length; i++){
+            tab[i] = Math.floor(Math.random() * 101) + 10;
+            document.write(tab[i]+" ");
+        }
+        document.write("<br>");
+
+        tab.sort(function(a,b){return b-a});
+        for(var i = 0; i < tab.length; i++){
+            document.write(tab[i]+" ");
+        }
+        document.write("<br>");
+
+        tab.unshift('7','8');
+        for(var i = 0; i < tab.length; i++){
+            document.write(tab[i]+" ");
+        }
+        document.write("<br>");
+
+        var losowa = Math.floor(Math.random() * 31) + 50;
+        document.write("losowa liczba z przedziału 50-80 = "+losowa+"<br>");
+        var tabForSearch = tab.slice(0);
+
+        tabForSearch.indexOf(losowa);
+        if(tab.indexOf(losowa) == -1){
+            document.write("liczba nie występuje w tablicy<br>");
+        }else{
+            var index = new Array();
+            while(tabForSearch.indexOf(losowa) != -1){
+                index.push(tabForSearch.indexOf(losowa));
+                tabForSearch.splice(0,tabForSearch.indexOf(losowa)+1);
+            }
+            document.write("liczba występuje na pozycjach: ");
+            for (let i = 0; i < index.length; i++) {
+                if(i==0)
+                    document.write((index[i])+", ");
+                else {
+                    index[i] = (index[i] + index[i - 1]) + 1;
+                    document.write(index[i] + ", ");
+                }
+            }
+            document.write("<br>");
+        }
+
+        var stringTab = tab.toString(tab.join(','));
+        document.write(stringTab);
+
+        document.write("<h3>ZADANIE 3 - STRING</h3><br>");
+        for (let i = 0; i < stringTab.length; i++) {
+            if(stringTab[i] == ","){
+                stringTab[i] = "x";
+                document.write(stringTab[i].fontcolor("green"));
+            }
+            if(i%3 == 0){
+                document.write(stringTab[i].fontcolor("red").sub());
+            }
+            if(i == Math.floor(stringTab.length/2) || i == Math.floor(stringTab.length/2)-1){
+                document.write(stringTab[i].fontsize(7));
+            }
+            else{
+                document.write(stringTab[i]);
+            }
+        }
+
+        document.write("<h3>ZADANIE 3 - ASSOC ARRAY</h3><br>");
+        var przedmioty = new Array();
+        przedmioty['stolik'] = 5;
+        przedmioty['krzesło'] = 10;
+        przedmioty['fotel'] = 2;
+        przedmioty['biurko'] = 3;
+        przedmioty['lampa'] = 4;
+        przedmioty['szafka'] = 1;
+        var cena = 0;
+        for (i in przedmioty)
+        {
+            cena = Math.floor(Math.random() * 991) + 10;
+            document.write(i+" ilość: "+przedmioty[i]+", cena/szt. = "+cena+"zł<br>");
+        }
+    </script>
+</body>
+</html>
