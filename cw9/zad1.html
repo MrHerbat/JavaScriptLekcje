@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>montaz oswietlenia</title>
+</head>
+<body>
+    <h2>Montaż oświetlenia</h2>
+    <form action="" method="post">
+        <label for="punkty">Ilość punktów montażowych</label> <br>
+        <input type="number" name="punkty" id="punkty" required><br>
+
+        <input type="radio" name="oswietlenie" id="neon" required>
+        <label for="neon">Neonowe</label> <br>
+        <input type="radio" name="oswietlenie" id="halogen" required>
+        <label for="halogen">Halogenowe</label> <br>
+        <input type="radio" name="oswietlenie" id="led" required>
+        <label for="led">Ledowe</label> <br>
+
+        <select name="okablowanie" id="okablowanie" required>
+            <option value="bezprzewodowe">Bezprzewodowe</option>
+            <option value="jednomodowe">Jednomodowe</option>
+            <option value="dwumodowe">Dwumodowe</option>
+        </select> <br>
+
+        <select name="pokoj" id="pokoj" multiple>
+            <option value="dzienny">Pokój dzienny</option>
+            <option value="kuchnia">Kuchnia</option>
+            <option value="sypialnia">Sypialnia</option>
+            <option value="przedpokoj">Przedpokój</option>
+            <option value="biuro">Pokój biurowy</option>
+        </select> <br>
+
+        <input type="button" value="Wyznacz cenę" onclick="form1()">
+    </form>
+    <span id="output"></span>
+    <script>
+        function form1() {
+            let punkty = document.getElementById("punkty").value;
+            let oswietlenie = "";
+            let cenaOswietlenia = 0;
+            let okablowanie = document.getElementById('okablowanie').value;
+            let cenaOkablowania = 0;
+
+            let pokoj = document.querySelector("#pokoj");
+            let pomieszczenia = Array.from(pokoj).filter(function (option){
+                return option.selected;
+            }).map(function (option) {
+                return option.value;
+            });
+
+            if (document.getElementById('neon').checked) {
+                oswietlenie = "Neonowe";
+                cenaOswietlenia = 15;
+            }else if(document.getElementById('halogen').checked){
+                oswietlenie = "Halogenowe";
+                cenaOswietlenia = 20;
+            }else{
+                oswietlenie = "Ledowe";
+                cenaOswietlenia = 25;
+            }
+
+            if(okablowanie == "bezprzewodowe"){
+                cenaOkablowania = 30;
+            }else if(okablowanie == "jednomodowe"){
+                cenaOkablowania = 5;
+            }else{
+                cenaOkablowania = 8;
+            }
+
+            let cenaWszystkiego = (punkty*cenaOswietlenia)+(punkty*cenaOkablowania);
+
+            document.getElementById("output").innerHTML+="Ilość punktów: " + punkty +
+                "<br> Wybrane oświetlenie: " + oswietlenie +
+                "<br>Cena wybranego oświetlenia: " + cenaOswietlenia + "zł" +
+                "<br>Wybrane okablowanie: " + okablowanie +
+                "<br>Cena wybranego okablowania: " + cenaOkablowania + "zł" +
+                "<br>Wybrane pomieszczenia: " + pomieszczenia +
+                "<br>Cena za całe wykoanie: " + cenaWszystkiego +"zł"
+        }
+    </script>
+</body>
+</html>

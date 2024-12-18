@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizzeria</title>
+</head>
+<body>
+    <h2>Wybór Pizzy</h2>
+    <form method="post">
+        <div>Rodzaj ciasta</div>
+        <input type="radio" name="ciasto" id="cienkie" checked>
+        <label for="cienkie">cienkie</label>
+        <input type="radio" name="ciasto" id="grube">
+        <label for="grube">grube</label>
+        <br>
+        <label for="ilosc">Ilość</label>
+        <input type="number" name="ilosc" id="ilosc" min="1" value="1"> <br>
+        <label for="nazwa">Nazwa</label>
+        <select name="nazwa" id="nazwa">
+            <option value="hawajska">hawajska</option>
+            <option value="capriciosa">capriciosa</option>
+            <option value="peperoni">peperoni</option>
+            <option value="farmerska">farmerska</option>
+        </select> <br>
+        <label for="dodatki">Dodatki gratis</label>
+        <select name="dodatki" id="dodatki" multiple>
+            <option value="ser">ser</option>
+            <option value="sos">sos</option>
+            <option value="szynka">szynka</option>
+            <option value="oliwki">oliwki</option>
+            <option value="kukurydza">kukurydza</option>
+        </select> <br>
+        <label for="dostawa">Czy z dowozem?</label>
+        <input type="checkbox" name="dostawa" id="dostawa"> <br>
+        <input type="button" value="Zamów" onclick="zamowienie()">
+    </form>
+    <span id="output"></span>
+    <script>
+        function zamowienie(){
+            let ciasto = document.querySelector("[name='ciasto']:checked").id;
+            let ilosc = document.getElementById("ilosc").value;
+            let nazwa = document.getElementById("nazwa").value;
+            let dodatki = document.getElementById("dodatki");
+            let listaDodatkow = Array.from(dodatki).filter(function (option){
+                return option.selected;
+            }).map(function (option) {
+                return option.value;
+            });
+            let dostawa = document.getElementById("dostawa").checked;
+
+            let cenaZaPizze = 0;
+            let cenaZaWszystko = 0;
+
+
+            switch (nazwa) {
+                case "hawajska":
+                    cenaZaPizze = 35;
+                    break;
+                case "capriciosa":
+                    cenaZaPizze = 40;
+                    break;
+                case "peperoni":
+                    cenaZaPizze = 30;
+                    break;
+                case "farmerska":
+                    cenaZaPizze = 45;
+                    break;
+            }
+            if(ciasto == "grube"){
+                cenaZaPizze+=5;
+            }
+            cenaZaWszystko = cenaZaPizze*ilosc;
+            if(dostawa){
+                cenaZaWszystko+=20;
+            }
+
+            document.getElementById("output").innerHTML =
+                "Wybrano"
+                +"<br>Nazwa: "+nazwa
+                +"<br>Rodzaj ciasta: "+ciasto
+                +"<br>Dodatki: "+(listaDodatkow.length?listaDodatkow:"brak")
+                +"<br>Cena 1 pizzy: "+cenaZaPizze+"zł"
+                +"<br>Ilość: "+ilosc
+                +"<br>Dowóz: "+(dostawa?"Tak":"Nie")
+                +"<br>Do zapłaty: "+cenaZaWszystko+"zł";
+
+        }
+    </script>
+</body>
+</html>

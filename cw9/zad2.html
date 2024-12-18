@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>koło</title>
+</head>
+<body>
+<form action="" method="post">
+    <label for="promien">Promień koła</label>
+    <input type="number" name="promien" id="promien" min="0"> <br>
+    <input type="checkbox" name="pole" id="pole">
+    <label for="pole">Oblicz pole</label><br>
+    <input type="checkbox" name="obwod" id="obwod">
+    <label for="obwod">Oblicz obwod</label><br>
+    <input type="button" value="Oblicz" onclick="obliczanie()">
+</form>
+<span id="output"></span>
+<script>
+    function obliczanie(){
+        document.getElementById("output").innerHTML = "";
+        let promien = document.getElementById("promien").value;
+        let wynik = 0;
+        if(document.getElementById("pole").checked){
+            wynik = Math.round(((promien*promien)*3.14)*100)/100;
+            document.getElementById("output").innerHTML += "Pole koła wynosi "+wynik +"<br>";
+        }
+        if(document.getElementById("obwod").checked){
+            wynik = Math.round(((promien*2)*3.14)*100)/100;
+            document.getElementById("output").innerHTML += "Obwód koła wynosi "+wynik+"<br>";
+        }
+    }
+
+</script>
+</body>
+</html>
