@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Koszt paliwa</title>
+</head>
+<body>
+  <h3>Oblicz koszt paliwa</h3>
+  <form method="post">
+    <label for="rodzaj">Rodzaj paliwa (1-benzyna, 2-olej napędowy)</label><br>
+    <input type="number" name="rodzaj" id="rodzaj" min="1" max="2"> <br>
+    <label for="ilosc">Ile litrów)</label><br>
+    <input type="number" name="ilosc" id="ilosc"  min="0"> <br>
+    <input type="button" value="OBLICZ" onclick="obliczenia()">
+  </form>
+  <span id="output"></span>
+  <script>
+    function obliczenia() {
+      let cenaZaLitr = 0;
+
+      let rodzaj = document.getElementById("rodzaj").value;
+      let ilosc = document.getElementById("ilosc").value;
+      switch (rodzaj){
+        case 1:
+          cenaZaLitr = 4;
+          break;
+        case 2:
+          cenaZaLitr = 3.5;
+          break;
+        default:
+          cenaZaLitr = 0;
+          break;
+      }
+
+      let pelnaCena = cenaZaLitr*ilosc;
+      document.getElementById("output").innerHTML = "koszt paliwa: "+pelnaCena+"zł";
+    }
+  </script>
+</body>
+</html>
