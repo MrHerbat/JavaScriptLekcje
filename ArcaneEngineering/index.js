@@ -7,6 +7,7 @@ function clock() {
     let h = time.getHours();
     let m = time.getMinutes();
     let s = time.getSeconds();
+    h = checkTime(h);
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('clock').innerHTML =  ""+h + ":" + m + ":" + s;
