@@ -1,0 +1,82 @@
+@font-face {
+    font-family: VintageSignature;
+    src: url("Paul\ Jackson_personal\ use.ttf");
+}
+*, *:before, *:after{ 
+    box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+} 
+body{
+    margin: 0;
+    background-color: #F2DCA7;
+    color: #27221f;
+    font-family: VintageSignature;
+    font-size: larger;
+}
+header{
+    margin: 0;
+    background-color: #c3a374;
+}
+#leftHeader{
+    float: left;
+    width: 70%;
+    height: 85%;
+}
+h1{
+    margin: 0;
+    font-size: 37px;
+}
+h3{
+    margin: 0;
+    font-size: 29px;
+    display: inline-block;
+}
+#rightHeader{
+    float: right;
+    width: 30%;
+    height: 85%;
+    padding-top: 3%;
+}
+#clock{
+    font-size: xx-large;
+}
+#bottomHeader{
+    background-color: #a08660;
+    clear: both;
+    height: 15%;
+}
+a{
+    font-size: 25px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: #4b1d1d;
+    width: 100px;
+    text-align: center;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.selected{
+    background-color: #114d09;
+}
+#rightMain{
+    width: 50%;
+    float: right;
+}
+#leftMain{
+    width: 50%;
+    float: left;
+}
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+    margin: 0;
+    background-color: #c3a374;
+    font-size: medium;
+}
