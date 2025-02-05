@@ -1,0 +1,52 @@
+﻿body{
+    background: #EEEEEE;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#container{
+    width: 90%;
+    margin: auto;
+}
+#logo, #menu{
+    background: lightblue !important;
+    width: 50%;
+    height: 100px;
+    padding-top:10px ;
+    padding-bottom:10px ;
+}
+#logo{
+    float: left;
+}
+#menu{
+    float: right;
+}
+#menu>a{
+    background: inherit;
+    color: navy;
+    font-size: 150%;
+    font-weight: bold;
+    margin: 10px;
+    padding: 5px;
+    text-decoration: none;
+}
+#menu>a:hover{
+    border: 1px solid navy;
+}
+#baner{
+    clear: both;
+    height: 200px;
+    background: #ddd;
+}
+main{
+    height:400px;
+    margin: 50px;
+    color: navy;
+}
+footer{
+    background: lightblue;
+    text-align: right;
+    padding: 10px;
+}
+button{
+    background: lightblue;
+    color: navy;
+}

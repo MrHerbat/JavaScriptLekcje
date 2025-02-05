@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Firma IT</title>
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+<section id="container">
+  <header>
+    <section id="logo">
+      <img src="logo.png" alt="firma it">
+    </section>
+    <section id="menu">
+      <a href="index.html">Strona Główna</a>
+      <a href="uslugi.html">Usługi</a>
+      <a href="kontakt.html">Kontakt</a>
+    </section>
+    <section id="baner">
+      <img src="animacja.gif" alt="Usługi informatyczne">
+    </section>
+  </header>
+  <main>
+    <table>
+      <tr>
+        <td>Imię:</td>
+        <td><input type="text" name="imie" id="imie"></td>
+      </tr>
+      <tr>
+        <td>Nazwisko:</td>
+        <td><input type="text" name="nazwisko" id="nazwisko"></td>
+      </tr>
+      <tr>
+        <td>E-mail:</td>
+        <td><input type="email" name="email" id="email"></td>
+      </tr>
+      <tr>
+        <td>Zgłoszenie</td>
+        <td><textarea name="zgloszenie" id="zgloszenie" cols="40" rows="10"></textarea></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="checkbox" name="regulamin" id="regulamin">Zapoznałam/em się z regulaminem</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button type="reset">Resetuj</button>
+          <button type="submit" onclick="formularz()">Prześlij</button>
+        </td>
+      </tr>
+    </table>
+    <hr>
+    <p id="output"></p>
+  </main>
+  <footer>
+    Autor strony: <strong>hjasjgba</strong>
+  </footer>
+</section>
+<script>
+  function formularz() {
+    var imie = document.getElementById("imie").value;
+    var nazwisko = document.getElementById("nazwisko").value;
+    var email = document.getElementById("email").value;
+    var zgloszenie = document.getElementById("zgloszenie").value;
+    var regulamin = document.getElementById("regulamin").checked;
+    if (!regulamin){
+      document.getElementById("output").style.color = "red";
+      document.getElementById("output").innerHTML = "Musisz zapoznać się z regulaminem";
+    }else{
+      document.getElementById("output").style.color = "navy";
+      document.getElementById("output").innerHTML = imie.toUpperCase() + " " + nazwisko.toUpperCase() + "<br>" + zgloszenie;
+    }
+  }
+</script>
+</body>
+</html>
