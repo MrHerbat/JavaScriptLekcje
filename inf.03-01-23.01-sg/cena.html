@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styl_1.css">
+  <title>malarz</title>
+</head>
+<body>
+<header>
+  <h1>Malowanie pokoi i biur</h1>
+</header>
+<main>
+  <section id="left">
+    <h2>Menu</h2>
+    <ul>
+      <li>
+        <a href="mieszamy.html">Mieszamy</a>
+      </li>
+      <li>
+        <a href="cena.html">Wyceniamy</a>
+      </li>
+    </ul>
+  </section>
+  <section id="middle">
+    <h2>Zapotrzebowanie na farbę</h2>
+    <label for="powierzchnia">Powierzchnia malowania (m<sup>2</sup>)</label>
+    <input type="number" name="powierzchnia" id="powierzchnia">
+    <button type="submit" onclick="Policz()">Policz</button>
+    <br>
+    <span id="output"></span>
+  </section>
+  <section id="right">
+    <img src="obraz.png" alt="Próbki farb">
+  </section>
+</main>
+<footer>
+  <h3>MALARZ</h3>
+  <p>Stronę opracował: 00000000000</p>
+</footer>
+</body>
+<script>
+  function Policz(){
+    var powierzchnia = document.getElementById("powierzchnia").value*1;
+    puszki=Math.ceil(powierzchnia/4);
+    document.getElementById("output").innerHTML = "Liczba potrzebnych puszek: "+puszki;
+  }
+</script>
+</html>

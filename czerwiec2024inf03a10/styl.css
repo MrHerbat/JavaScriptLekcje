@@ -1,0 +1,51 @@
+﻿*{
+    font-family:Bookman, 'sans-serif';
+}
+header{
+    display: flex;
+}
+#h-left, #h-right{
+    width:50%;
+    background: darkcyan;
+    color: white;
+    height: 100px;
+    letter-spacing: 15px;
+}
+footer{
+    background: darkcyan;
+    color: white;
+}
+main{
+    display: flex;
+}
+.card{
+    background: Azure;
+    width: 30%;
+    margin: 1%;
+    box-shadow: 4px 4px 8px dimgray;
+}
+.card img{
+    width: 100%;
+}
+p, h2, h3{
+    margin: 15px;
+}
+a{
+    color: white;
+}
+h5{
+    background: teal;
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+h5:hover{
+    background: lightseagreen;
+}
+blockquote{
+    text-align: center;
+    padding: 30px 0 30px 0;
+    font-style: italic;
+}
+#quote2, #quote3{
+    display: none;
+}
